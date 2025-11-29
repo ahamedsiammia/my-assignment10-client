@@ -28,7 +28,7 @@ const Slider = () => {
                     </p>
                     <Link to="/BrowsCar" 
                        
-                        className="btn bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] btn-lg transition-transform duration-300 hover:scale-95 text-white" 
+                        className="btn rounded-2xl bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] btn-lg transition-transform duration-300 hover:scale-95 text-white" 
                     >
                         Browse Cars
                     </Link>

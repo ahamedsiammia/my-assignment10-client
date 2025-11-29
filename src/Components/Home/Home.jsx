@@ -4,6 +4,7 @@ import Card from '../Card/Card';
 import Loading from '../Loading';
 import WhyRent from '../WhyRent';
 import CustomerReview from '../CustomerReview';
+import TopRateCar from '../TopRateCar/TopRateCar';
 const latestCar = fetch("http://localhost:3000/latest-cars").then(res=>res.json())
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
            </Suspense>
            <WhyRent></WhyRent>
            <CustomerReview></CustomerReview>
+           <TopRateCar></TopRateCar>
         </div>
     );
 };
