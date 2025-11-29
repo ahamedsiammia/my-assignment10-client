@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope, FaPhoneAlt } from 'reac
 import { Link } from 'react-router';
 const Footer = () => {
     return (
-        <div className=' bg-black'>
+        <div className=' bg-black mt-5'>
             <div className='bg-black container mx-auto  grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 p-10 '>
             <div className='space-y-5 text-gray-500'>
                 <h1 className='text-2xl font-bold text-white'> <span className="text-3xl font-extrabold text-blue-500">CS</span> CarSpot</h1>
