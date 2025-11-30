@@ -18,7 +18,7 @@ const Navber = () => {
   };
 
   return (
-    <nav className="navbar bg-gradient-to-r from-[#C800FF] to-[#FF9800] p-4 text-white shadow-lg ">
+    <nav className="navbar bg-linear-to-r from-[#C800FF] to-[#FF9800] p-4 text-white shadow-lg ">
       <div className="navbar-start">
 {/* mobile menu */}
         <div className="dropdown">
@@ -47,7 +47,7 @@ const Navber = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] text-white"
+                    ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] text-white"
                     : ""
                 }
                 to="/"
@@ -59,7 +59,7 @@ const Navber = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] text-white"
+                    ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] text-white"
                     : ""
                 }
                 to="/MyBookings"
@@ -71,7 +71,7 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
                   : ""
               }
               to="/BrowsCar"
@@ -83,7 +83,7 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
                   : ""
               }
               to="/AddCar"
@@ -91,6 +91,20 @@ const Navber = () => {
               Add Car
             </NavLink>
           </li>
+          {
+            user && <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  : ""
+              }
+              to="/MyListings"
+            >
+              My Listings
+            </NavLink>
+          </li>
+          }
           </ul>
         </div>
 
@@ -110,7 +124,7 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
                   : ""
               }
               to="/"
@@ -123,7 +137,7 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
                   : ""
               }
               to="/MyBookings"
@@ -135,7 +149,7 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
                   : ""
               }
               to="/BrowsCar"
@@ -147,7 +161,7 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
                   : ""
               }
               to="/AddCar"
@@ -155,6 +169,20 @@ const Navber = () => {
               Add Car
             </NavLink>
           </li>
+          {
+            user && <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  : ""
+              }
+              to="/MyListings"
+            >
+              My Listings
+            </NavLink>
+          </li>
+          }
         </ul>
       </div>
 
@@ -180,7 +208,7 @@ const Navber = () => {
               <li>
                 <button
                   onClick={hendleLogout}
-                  className="bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] text-white px-3 py-2 rounded-xl"
+                  className="bg-linear-to-r from-[#FF6B00] to-[#FF2D55] text-white px-3 py-2 rounded-xl"
                 >
                   Log Out
                 </button>
@@ -190,13 +218,13 @@ const Navber = () => {
         ) : (
           <>
             <Link to="/Login">
-              <button className="bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] text-white px-5 rounded-xl py-2 font-semibold">
+              <button className="bg-linear-to-r from-[#FF6B00] to-[#FF2D55] text-white px-5 rounded-xl py-2 font-semibold">
                 Log In
               </button>
             </Link>
 
             <Link to="/Regester">
-              <button className="bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] text-white px-5 rounded-xl py-2 font-semibold">
+              <button className="bg-linear-to-r from-[#FF6B00] to-[#FF2D55] text-white px-5 rounded-xl py-2 font-semibold">
                 Register
               </button>
             </Link>
@@ -208,3 +236,5 @@ const Navber = () => {
 };
 
 export default Navber;
+
+

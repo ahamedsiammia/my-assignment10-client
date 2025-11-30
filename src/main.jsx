@@ -15,13 +15,14 @@ import BrowsCar from './Page/BrowsCar.jsx';
 import CarDetails from './Page/CarDetails.jsx';
 import PrivetRout from './Context/PrivetRout.jsx';
 import AddCar from './Page/AddCar.jsx';
+import MyListings from './Page/MyListings.jsx';
 
 const router = createBrowserRouter([
   {
     path:"/",
     Component:Root,
     children:[
-      {index:true ,path:"/",Component:Home},
+      {index:true ,Component:Home},
       {
         path:"/MyBookings",
         Component:MyBookingsCar
@@ -49,6 +50,12 @@ const router = createBrowserRouter([
       {
         path:"/AddCar",
         Component:AddCar
+      },
+      {
+        path:"/MyListings",
+        element:<PrivetRout>
+          <MyListings></MyListings>
+        </PrivetRout>
       }
     ]
   }
