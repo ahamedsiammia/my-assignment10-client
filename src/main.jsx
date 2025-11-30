@@ -14,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import BrowsCar from './Page/BrowsCar.jsx';
 import CarDetails from './Page/CarDetails.jsx';
 import PrivetRout from './Context/PrivetRout.jsx';
+import AddCar from './Page/AddCar.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         loader:({params})=>fetch(`http://localhost:3000/cars/${params.id}`)
           
         
+      },
+      {
+        path:"/AddCar",
+        Component:AddCar
       }
     ]
   }

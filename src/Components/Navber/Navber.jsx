@@ -79,6 +79,18 @@ const Navber = () => {
               Brows Car
             </NavLink>
           </li>
+            <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  : ""
+              }
+              to="/AddCar"
+            >
+              Add Car
+            </NavLink>
+          </li>
           </ul>
         </div>
 
@@ -129,6 +141,18 @@ const Navber = () => {
               to="/BrowsCar"
             >
               Brows Car
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-gradient-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  : ""
+              }
+              to="/AddCar"
+            >
+              Add Car
             </NavLink>
           </li>
         </ul>

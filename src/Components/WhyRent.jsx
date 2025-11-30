@@ -6,32 +6,55 @@ import { LuCalendarHeart } from 'react-icons/lu';
 
 const WhyRent = () => {
     return (
-        <div className='bg-gray-100 '>
-            <h1 className='text-5xl text-center font-bold p-10'>why Rent with us</h1>
-            <div className='grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 container mx-auto  gap-5 p-5 '>
-                <div className=' bg-white shadow-lg rounded-xl p-15 text-center'>
-                    <p className='flex justify-center'><LuCalendarHeart size={150}/></p>
-                    <h1 className='text-2xl font-bold text-center'>Easy <br />Booking</h1>
-                    <p className='font-semibold'>Book your ride with <br /> just a few clicks</p>
+        <div className="bg-gray-100 py-16">
+            <h1 className="text-3xl  text-center font-bold mb-12">
+                Why Rent With Us
+            </h1>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-4">
+
+
+                <div className="bg-white shadow-lg rounded-xl p-6 text-center hover:scale-105 transition duration-300">
+                    <div className="flex justify-center mb-4">
+                        <LuCalendarHeart size={80} className="text-primary" />
+                    </div>
+                    <h2 className="text-xl font-bold mb-2">Easy Booking</h2>
+                    <p className="text-gray-600 font-medium">
+                        Book your ride with just a few clicks.
+                    </p>
                 </div>
 
-                <div className='bg-white shadow-lg rounded-xl p-15 text-center'>
-                    <p className='flex justify-center'><HiDocumentCurrencyDollar size={150} /></p>
-                    <p className='text-2xl font-bold text-center'>Affordable <br /> Rates</p>
-                    <p className='font-semibold'>Get competive Pri- <br />ces on all rentals</p>
+                <div className="bg-white shadow-lg rounded-xl p-6 text-center hover:scale-105 transition duration-300">
+                    <div className="flex justify-center mb-4">
+                        <HiDocumentCurrencyDollar size={80} className="text-primary" />
+                    </div>
+                    <h2 className="text-xl font-bold mb-2">Affordable Rates</h2>
+                    <p className="text-gray-600 font-medium">
+                        Enjoy competitive pricing on every rental.
+                    </p>
                 </div>
 
-                <div className='bg-white shadow-lg rounded-xl p-15 text-center'>
-                    <p className='flex justify-center ml-9'><FaUserCheck size={150} /></p>
-                    <p className='text-2xl font-bold text-center'>Trusted <br /> Providers</p>
-                    <p className='font-semibold'>all our providers are <br /> vetted for quality</p>
+                <div className="bg-white shadow-lg rounded-xl p-6 text-center hover:scale-105 transition duration-300">
+                    <div className="flex justify-center mb-4">
+                        <FaUserCheck size={80} className="text-primary" />
+                    </div>
+                    <h2 className="text-xl font-bold mb-2">Trusted Providers</h2>
+                    <p className="text-gray-600 font-medium">
+                        All providers are verified and trusted.
+                    </p>
                 </div>
 
-                <div className='bg-white shadow-lg rounded-xl p-15 text-center'>
-                    <p className='flex justify-center'><BiSupport size={150} /></p>
-                    <p className='text-2xl font-bold text-center'>24/7 <br />Support</p>
-                    <p className='font-semibold'>Our team is available <br /> around the clock</p>
+
+                <div className="bg-white shadow-lg rounded-xl p-6 text-center hover:scale-105 transition duration-300">
+                    <div className="flex justify-center mb-4">
+                        <BiSupport size={80} className="text-primary" />
+                    </div>
+                    <h2 className="text-xl font-bold mb-2">24/7 Support</h2>
+                    <p className="text-gray-600 font-medium">
+                        Our team is here to help anytime.
+                    </p>
                 </div>
+
             </div>
         </div>
     );
