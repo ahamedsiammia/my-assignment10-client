@@ -41,7 +41,7 @@ const Navber = () => {
 
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box text-black z-10 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box text-black z-50 mt-3 w-52 p-2 shadow"
           >
             <li>
               <NavLink
@@ -79,7 +79,8 @@ const Navber = () => {
               Brows Car
             </NavLink>
           </li>
-            <li>
+            {
+              user && <li>
             <NavLink
               className={({ isActive }) =>
                 isActive
@@ -91,6 +92,7 @@ const Navber = () => {
               Add Car
             </NavLink>
           </li>
+            }
           {
             user && <li>
             <NavLink
@@ -157,7 +159,8 @@ const Navber = () => {
               Brows Car
             </NavLink>
           </li>
-          <li>
+          {
+              user && <li>
             <NavLink
               className={({ isActive }) =>
                 isActive
@@ -169,6 +172,7 @@ const Navber = () => {
               Add Car
             </NavLink>
           </li>
+            }
           {
             user && <li>
             <NavLink

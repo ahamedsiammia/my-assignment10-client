@@ -15,7 +15,7 @@ const AddCar = () => {
             category: e.target.category.value,
             rentPrice: e.target.rentPrice.value,
             location: e.target.location.value,
-            imageUrl: e.target.location.value,
+            imageUrl: e.target.ImageUrl.value,
             providerName: user.displayName,
             providerEmail: user.email,
             status: "available",
@@ -65,7 +65,7 @@ const AddCar = () => {
               name="description"
               required
               rows="15"
-             className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-[250px]"
+             className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-[100px]"
               placeholder="Enter description"
             ></textarea>
           </div>

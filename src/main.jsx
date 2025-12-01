@@ -49,7 +49,9 @@ const router = createBrowserRouter([
       },
       {
         path:"/AddCar",
-        Component:AddCar
+        element: <PrivetRout>
+          <AddCar></AddCar>
+        </PrivetRout>
       },
       {
         path:"/MyListings",
