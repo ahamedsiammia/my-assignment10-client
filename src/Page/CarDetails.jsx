@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { use } from 'react';
 import UseCar from '../Components/Hook/UseCar';
-import { useLoaderData} from 'react-router';
+import { Link, useLoaderData} from 'react-router';
 import { IoLocationSharp } from 'react-icons/io5';
+import { AuthContext } from '../Context/AuthProvider';
+import { toast } from 'react-toastify';
 const CarDetails = () => {
  const car =useLoaderData();
  const {imageUrl,status,carName,category,description,rentPrice,location,providerEmail,providerName}=car;
+const {user}=use(AuthContext);
+
+const hendlebooking = () =>{
+  
+  fetch("http://localhost:3000/cars",{
+    method:"POST",
+    headers:{
+      "content-type":"application/json"
+    },
+    body:JSON.stringify({...car,booking_by:user.email})
+  })
+  .then(res=>res.json())
+  .then(data =>{
+    toast.success("Your Booking successfull")
+    console.log(data)
+  })
+  .catch(error=>console.log(error))
+}
+
     return (
         <div className='p-5 mt-10 bg-white shadow-xl container mx-auto '>
             <div className='lg:flex justify-around'>
@@ -22,9 +43,13 @@ const CarDetails = () => {
                     <span className='mt-5 text-green-500'><IoLocationSharp size={50} /></span>
                 <h1 className='text-xl'> {location}</h1> 
                 </div>
-                <button className="mt-10 px-6 py-3 w-full bg-gradient-to-r from-green-400 to-green-600 text-white font-bold rounded-2xl shadow-lg hover:scale-105 transition-all duration-200">
+                 
+                 <button onClick={hendlebooking}
+                     className="mt-10 px-6 py-3 w-full bg-gradient-to-r from-green-400 to-green-600 text-white font-bold rounded-2xl shadow-lg hover:scale-105 transition-all duration-200">
             Book Now
-          </button>
+            </button>
+          
+                
             </div>
 
             <div className=' flex  items-center '>

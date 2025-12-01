@@ -16,6 +16,7 @@ import CarDetails from './Page/CarDetails.jsx';
 import PrivetRout from './Context/PrivetRout.jsx';
 import AddCar from './Page/AddCar.jsx';
 import MyListings from './Page/MyListings.jsx';
+import Error from './Page/Error.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
       {index:true ,Component:Home},
       {
         path:"/MyBookings",
-        Component:MyBookingsCar
+        Component:MyBookingsCar,
+        // errorElement:<Error></Error>
       },
       {
         path:"/Login",

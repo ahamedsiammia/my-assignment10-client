@@ -10,10 +10,7 @@ const Slider = () => {
                     src="https://i.ibb.co.com/kVwHhRfY/Gemini-Generated-Image-9nyd5p9nyd5p9nyd.png"
                     className="w-full h-[800px] object-cover" />
                 
-                {/* 1. Navigation buttons are here.
-                  2. Add a higher z-index (like z-20) to this div 
-                     to ensure buttons are above the content overlay (which is z-10).
-                */}
+                
                 <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-20"> 
                     <a href="#slide4" className="btn btn-circle">❮</a>
                     <a href="#slide2" className="btn btn-circle">❯</a>
