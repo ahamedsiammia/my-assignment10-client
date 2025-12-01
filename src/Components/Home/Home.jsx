@@ -10,7 +10,6 @@ const Home = () => {
     return (
         <div>
           <Slider></Slider>
-           <h1 className='text-center text-4xl font-bold my-8'>Featured <span className='text-[#FF6B00]'>Cars</span></h1>
            <Suspense fallback={<div> <Loading></Loading> </div>}>
           <Card latestCar={latestCar}></Card>
            </Suspense>

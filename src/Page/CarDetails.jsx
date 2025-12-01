@@ -39,7 +39,7 @@ const hendlebooking = () =>{
                 <h1 className='mt-5'>{description}</h1>
             </div>
             <div className='lg:p-30 '>
-                {/* <h1 className='text-xl font-semibold'>Category :{category}</h1> */}
+                <h1 className='text-xl font-semibold mb-5'>Category :{category}</h1>
                 <button className='btn rounded-2xl mb-5 bg-green-500 p-4 '>{status}</button>
                 <h1 className='text-2xl font-semibold '>RentPrice:<span className='text-green-500'>{rentPrice}$</span></h1>
                 <div className='flex items-end'>
