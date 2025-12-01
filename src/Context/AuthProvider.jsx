@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged,signInWithEmailAndPa
 import React, { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider } from "firebase/auth";
 import { auth } from '../Firebase/Firebase.init';
+import Loading from '../Components/Loading';
 const provider = new GoogleAuthProvider();
 export const AuthContext =createContext();
 const AuthProvider = ({children}) => {
@@ -46,7 +47,9 @@ const AuthProvider = ({children}) => {
     }
 
 
-
+ if(loading){
+    return <Loading></Loading>
+ }
     const AuthData ={
         user,
         setUser,

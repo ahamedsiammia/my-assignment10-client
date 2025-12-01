@@ -22,9 +22,13 @@ const MyListings = () => {
     if(loading){
         return <Loading></Loading>
     }
+    if(cars.length === 0 ){
+        return <div className='flex items-center justify-center h-screen'>
+            <h1 className='text-4xl font-bold '>You don't add any cars, please add a car</h1>
+        </div>
+    }
 
-    
-    
+
     return (
         <div>
             <div className='grid lg:grid-cols-1 md:grid-cols-1 grid-cols-1'>

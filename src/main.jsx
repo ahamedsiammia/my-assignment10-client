@@ -25,9 +25,15 @@ const router = createBrowserRouter([
     children:[
       {index:true ,Component:Home},
       {
+        path:"/*",
+        element: <Error></Error>
+      },
+      {
         path:"/MyBookings",
-        Component:MyBookingsCar,
-        // errorElement:<Error></Error>
+        element:<PrivetRout>
+          <MyBookingsCar></MyBookingsCar>
+        </PrivetRout>,
+        errorElement:<Error></Error>
       },
       {
         path:"/Login",

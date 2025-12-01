@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import UseCar from '../Components/Hook/UseCar';
 import { Link, useLoaderData} from 'react-router';
 import { IoLocationSharp } from 'react-icons/io5';
@@ -8,10 +8,13 @@ const CarDetails = () => {
  const car =useLoaderData();
  const {imageUrl,status,carName,category,description,rentPrice,location,providerEmail,providerName}=car;
 const {user}=use(AuthContext);
+  const [isBooking, setIsBooking] = useState(false);
+
+
 
 const hendlebooking = () =>{
-  
-  fetch("http://localhost:3000/cars",{
+  setIsBooking(true);
+  fetch("http://localhost:3000/booking",{
     method:"POST",
     headers:{
       "content-type":"application/json"
@@ -44,7 +47,7 @@ const hendlebooking = () =>{
                 <h1 className='text-xl'> {location}</h1> 
                 </div>
                  
-                 <button onClick={hendlebooking}
+                 <button onClick={hendlebooking}  disabled={isBooking}
                      className="mt-10 px-6 py-3 w-full bg-gradient-to-r from-green-400 to-green-600 text-white font-bold rounded-2xl shadow-lg hover:scale-105 transition-all duration-200">
             Book Now
             </button>

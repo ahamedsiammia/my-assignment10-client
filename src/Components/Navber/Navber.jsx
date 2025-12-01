@@ -55,30 +55,6 @@ const Navber = () => {
                 Home
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] text-white"
-                    : ""
-                }
-                to="/MyBookings"
-              >
-                My Booking
-              </NavLink>
-            </li>
-            <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
-                  : ""
-              }
-              to="/BrowsCar"
-            >
-              Brows Car
-            </NavLink>
-          </li>
             {
               user && <li>
             <NavLink
@@ -93,7 +69,7 @@ const Navber = () => {
             </NavLink>
           </li>
             }
-          {
+             {
             user && <li>
             <NavLink
               className={({ isActive }) =>
@@ -107,6 +83,34 @@ const Navber = () => {
             </NavLink>
           </li>
           }
+             {
+            user && <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  : ""
+              }
+              to="/MyBookings"
+            >
+              My Booking
+            </NavLink>
+          </li>
+          }
+            <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  : ""
+              }
+              to="/BrowsCar"
+            >
+              Brows Car
+            </NavLink>
+          </li>
+            
+         
           </ul>
         </div>
 
@@ -135,30 +139,6 @@ const Navber = () => {
             </NavLink>
           </li>
 
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
-                  : ""
-              }
-              to="/MyBookings"
-            >
-              My Booking
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
-                  : ""
-              }
-              to="/BrowsCar"
-            >
-              Brows Car
-            </NavLink>
-          </li>
           {
               user && <li>
             <NavLink
@@ -173,7 +153,8 @@ const Navber = () => {
             </NavLink>
           </li>
             }
-          {
+
+            {
             user && <li>
             <NavLink
               className={({ isActive }) =>
@@ -187,6 +168,35 @@ const Navber = () => {
             </NavLink>
           </li>
           }
+
+          {
+            user && <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  : ""
+              }
+              to="/MyBookings"
+            >
+              My Booking
+            </NavLink>
+          </li>
+          }
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  : ""
+              }
+              to="/BrowsCar"
+            >
+              Brows Car
+            </NavLink>
+          </li>
+          
+          
         </ul>
       </div>
 

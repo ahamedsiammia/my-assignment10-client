@@ -56,8 +56,8 @@ const hendleDelete =()=>{
     })
     .then(res => res.json())
     .then(data =>{
-        const remeningData = cars.filter(car => car._id == car._id)
-        setCars(remeningData)
+        const remaningCar = cars.filter(c => c._id == car._id)
+        setCars(remaningCar)
         Swal.fire({
       title: "Deleted!",
       text: "Your file has been deleted.",
