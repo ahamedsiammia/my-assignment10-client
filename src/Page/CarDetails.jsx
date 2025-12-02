@@ -10,7 +10,7 @@ const CarDetails = () => {
 const {user}=use(AuthContext);
   const [isBooking, setIsBooking] = useState(false);
 
- const neveget =useNavigate()
+ const navigate =useNavigate()
 
 const hendlebooking = () =>{
   setIsBooking(true);
@@ -25,7 +25,10 @@ const hendlebooking = () =>{
   .then(data =>{
     toast.success("Your Booking successfull")
     console.log(data)
-    neveget("/MyBookings")
+    
+    setTimeout(() => {
+          navigate("/MyBookings");
+        }, 1000);
 
   })
   .catch(error=>console.log(error))

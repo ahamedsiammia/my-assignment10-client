@@ -27,7 +27,8 @@ const hendleSubmit =(e)=>{
         })
         .then(res =>res.json())
         .then(data =>{
-            toast.success("Data Update Successfull")
+            toast.success("Your Update Successfull")
+            window.location.reload()
             console.log(data)
         })
         .catch(error =>console.log(error ))

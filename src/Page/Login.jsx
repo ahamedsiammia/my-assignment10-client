@@ -1,5 +1,5 @@
 import React, { use, useRef, useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../Context/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
@@ -18,8 +18,8 @@ const Login = () => {
     const password=form.password.value;
     Login(email,password)
     .then(result =>{
-      navigate("/")
-       toast("Your Login successfull")
+       toast.success("Your Login successfull")
+       navigate("/")
       form.reset();
       console.log(result.user)
       navigate(`${location.state?location.state:"/"}`)
@@ -36,8 +36,10 @@ const Login = () => {
    const hendleGoogleLogin = () =>{
       googleLogin()
       .then(result =>{
-        navigate("/")
-        toast("Your LogIn successfull")
+        toast.success("Your LogIn successfull")
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
         console.log(result.user)
       })
       .catch(error =>{
@@ -85,6 +87,7 @@ const Login = () => {
           </fieldset>
         </form>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
     );
 };
