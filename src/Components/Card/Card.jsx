@@ -11,7 +11,7 @@ const filteredCars = latestcars.filter(car=>car.carName.toLowerCase().includes(s
     return (
        <div className='container mx-auto my-5'>
 
-        <div className='flex justify-between items-center'>
+        <div className='md:flex justify-between items-center'>
         <h1 className=' text-4xl font-bold my-8'>Featured <span className='text-[#FF6B00]'>Cars</span></h1>
         <input type="search" 
         name="search"
