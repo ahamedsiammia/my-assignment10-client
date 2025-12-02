@@ -1,6 +1,6 @@
 import React, { use, useState } from 'react';
 import UseCar from '../Components/Hook/UseCar';
-import { Link, useLoaderData} from 'react-router';
+import { Link, useLoaderData, useNavigate} from 'react-router';
 import { IoLocationSharp } from 'react-icons/io5';
 import { AuthContext } from '../Context/AuthProvider';
 import { toast } from 'react-toastify';
@@ -10,11 +10,11 @@ const CarDetails = () => {
 const {user}=use(AuthContext);
   const [isBooking, setIsBooking] = useState(false);
 
-
+ const neveget =useNavigate()
 
 const hendlebooking = () =>{
   setIsBooking(true);
-  fetch("http://localhost:3000/booking",{
+  fetch("https://my-assignment10-server.vercel.app/booking",{
     method:"POST",
     headers:{
       "content-type":"application/json"
@@ -25,6 +25,8 @@ const hendlebooking = () =>{
   .then(data =>{
     toast.success("Your Booking successfull")
     console.log(data)
+    neveget("/MyBookings")
+
   })
   .catch(error=>console.log(error))
 }

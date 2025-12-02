@@ -5,7 +5,7 @@ import Loading from '../Loading';
 import WhyRent from '../WhyRent';
 import CustomerReview from '../CustomerReview';
 import TopRateCar from '../TopRateCar/TopRateCar';
-const latestCar = fetch("http://localhost:3000/latest-cars").then(res=>res.json())
+const latestCar = fetch("https://my-assignment10-server.vercel.app/latest-cars").then(res=>res.json())
 const Home = () => {
     return (
         <div>

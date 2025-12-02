@@ -6,7 +6,7 @@ const UseCar = () => {
     const [loading,setLoading]=useState(true);
 
     useEffect(()=>{
-        axios("http://localhost:3000/cars")
+        axios("https://my-assignment10-server.vercel.app/cars")
         .then(data=>setCar(data.data))
         .catch(error=>console.log(error))
         .finally(()=>setLoading(false))

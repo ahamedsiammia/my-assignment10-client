@@ -7,11 +7,7 @@ const Card = ({latestCar}) => {
 const [searchText,setSearchText]=useState("");
 
 const filteredCars = latestcars.filter(car=>car.carName.toLowerCase().includes(searchText.toLowerCase()));
-
-//   if(filteredCars.length == 0){
-//     return <p>kono gari paua jai nai</p>
-//   }
-
+    
     return (
        <div className='container mx-auto my-5'>
         <div className='flex justify-between items-center'>
@@ -26,7 +22,7 @@ const filteredCars = latestcars.filter(car=>car.carName.toLowerCase().includes(s
         </div>
          <div className='container mx-auto gap-10 grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1'>
            {
-            filteredCars.map(car=> <ShowCar key={car._id} car={car} ></ShowCar>)
+            filteredCars.map(car=> <ShowCar  key={car._id} car={car} ></ShowCar>)
            } 
         </div>
        </div>

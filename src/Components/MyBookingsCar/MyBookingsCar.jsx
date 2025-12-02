@@ -8,7 +8,7 @@ const MyBookingsCar = () => {
     const [cars,setCars]=useState([])
     const {user}=use(AuthContext)
      useEffect(()=>{
-            fetch(`http://localhost:3000/booking/email/${user.email}`)
+            fetch(`https://my-assignment10-server.vercel.app/booking/email/${user.email}`)
             .then(res =>res.json())
             .then(data => {
                 setLoading(false)

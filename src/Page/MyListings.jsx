@@ -9,7 +9,7 @@ const MyListings = () => {
     const [loading,setLoading]=useState(true);
 
     useEffect(()=>{
-        fetch(`http://localhost:3000/cars/email/${user.email}`)
+        fetch(`https://my-assignment10-server.vercel.app/cars/email/${user.email}`)
         .then(res =>res.json())
         .then(data => {
             setLoading(false)

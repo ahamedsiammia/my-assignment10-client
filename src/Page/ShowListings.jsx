@@ -18,7 +18,7 @@ const hendleSubmit =(e)=>{
         }
         console.log(newCar)
 
-        fetch(`http://localhost:3000/cars/${car._id}`,{
+        fetch(`https://my-assignment10-server.vercel.app/cars/${car._id}`,{
             method:"PUT",
             headers:{
                 "Content-Type": "application/json"
@@ -48,7 +48,7 @@ const hendleDelete =()=>{
 }).then((result) => {
   if (result.isConfirmed) {
 
-    fetch(`http://localhost:3000/cars/${car._id}`,{
+    fetch(`https://my-assignment10-server.vercel.app/cars/${car._id}`,{
         method:"DELETE",
         headers:{
             "Content-Type": "application/json"
@@ -56,8 +56,7 @@ const hendleDelete =()=>{
     })
     .then(res => res.json())
     .then(data =>{
-        const remaningCar = cars.filter(c => c._id == car._id)
-        setCars(remaningCar)
+        window.location.reload()
         Swal.fire({
       title: "Deleted!",
       text: "Your file has been deleted.",

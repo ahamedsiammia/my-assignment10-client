@@ -22,7 +22,7 @@ const AddCar = () => {
             postedAt: new Date()
         }
         console.log({newCar})
-        fetch("http://localhost:3000/cars",{
+        fetch("https://my-assignment10-server.vercel.app/cars",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

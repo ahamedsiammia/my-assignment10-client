@@ -5,7 +5,7 @@ const ShowCar = ({car}) => {
      const {carName,providerName,rentPrice,location,imageUrl,_id,status}=car;
     return (
         <div className='shadow-sm  p-4 border border-gray-200  bg-gradient-to-br from-[#f0fff4] to-[#e6ffe6] transition-all duration-300 ease-out 
-      hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.03]'>
+      hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.03] mb-5 mt-5'>
 
             <div className='mb-5'>
                 <img className='w-full h-[300px] object-cover rounded-2xl   transition-all duration-500 ease-out
