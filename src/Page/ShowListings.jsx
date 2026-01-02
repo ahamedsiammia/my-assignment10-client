@@ -126,7 +126,7 @@ const hendleDelete =()=>{
               name="name"
              
               className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-              defaultValue={car.carName}
+              defaultValue={car?.carName}
             />
           </div>
 
