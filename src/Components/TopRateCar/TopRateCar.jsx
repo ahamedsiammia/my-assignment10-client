@@ -2,7 +2,7 @@ import React from 'react';
 
 const TopRateCar = () => {
     return (
- <div className="max-w-7xl mx-auto px-4 py-16">
+ <div className="container mx-auto px-4 py-16">
       <h2 className="text-3xl font-bold text-center mb-10">
         Top Rated Cars
       </h2>
@@ -17,7 +17,7 @@ const TopRateCar = () => {
             className="w-full h-48 object-cover"
           />
           <div className="p-4">
-            <h3 className="text-lg font-semibold mb-1">Mercedes-Benz S-Class</h3>
+            <h3 className="text-lg font-semibold mb-1 text-black">Mercedes-Benz S-Class</h3>
             <p className="text-yellow-500">⭐ 4.9 <span className="text-gray-500 text-sm">(200 reviews)</span></p>
           </div>
         </div>
@@ -30,7 +30,7 @@ const TopRateCar = () => {
             className="w-full h-48 object-cover"
           />
           <div className="p-4">
-            <h3 className="text-lg font-semibold mb-1">Porsche 911</h3>
+            <h3 className="text-lg font-semibold mb-1 text-black">Porsche 911</h3>
             <p className="text-yellow-500">⭐ 4.8 <span className="text-gray-500 text-sm">(150 reviews)</span></p>
           </div>
         </div>
@@ -43,7 +43,7 @@ const TopRateCar = () => {
             className="w-full h-48 object-cover"
           />
           <div className="p-4">
-            <h3 className="text-lg font-semibold mb-1">Audi A6</h3>
+            <h3 className="text-lg font-semibold mb-1 text-black">Audi A6</h3>
             <p className="text-yellow-500">⭐ 4.8 <span className="text-gray-500 text-sm">(180 reviews)</span></p>
           </div>
         </div>
@@ -56,7 +56,7 @@ const TopRateCar = () => {
             className="w-full h-48 object-cover"
           />
           <div className="p-4">
-            <h3 className="text-lg font-semibold mb-1">Chevrolet Camaro</h3>
+            <h3 className="text-lg font-semibold mb-1 text-black">Chevrolet Camaro</h3>
             <p className="text-yellow-500">⭐ 4.8 <span className="text-gray-500 text-sm">(170 reviews)</span></p>
           </div>
         </div>

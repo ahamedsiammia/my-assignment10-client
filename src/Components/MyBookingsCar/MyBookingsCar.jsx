@@ -27,7 +27,7 @@ const MyBookingsCar = () => {
         </div>
         }
     return (
-        <div className='container mx-auto gap-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
+        <div className='container mx-auto gap-10 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1'>
             {
                 cars.map(car=><ShowCar key={car._id} car={car}></ShowCar>)
             }

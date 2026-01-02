@@ -13,23 +13,23 @@ const ShowCar = ({car}) => {
             </div>
 
               <div className='flex justify-between'>
-                <h1 className='text-2xl font-bold'>{carName}</h1>
+                <h1 className='text-2xl text-black font-bold'>{carName}</h1>
                 {
-                  status == "available"?<h1 className='p-2 rounded-2xl text-white bg-gradient-to-r from-[#FF6B00] to-[#FF2D55]'>{status}</h1>:<h1 className='p-2 rounded-2xl text-white bg-gradient-to-r from-[#007BFF] to-[#00C6FF] shadow-sm'>{status}</h1>
+                  status == "available"?<h1 className='btn text-white bg-gradient-to-r from-[#FF6B00] to-[#FF2D55]'>{status}</h1>:<h1 className='btn text-white bg-gradient-to-r from-[#007BFF] to-[#00C6FF] shadow-sm'>{status}</h1>
                   
                 }
               </div>
 
 
-            <div className='flex justify-between font-semibold mt-3 text-xl' >
+            <div className='flex justify-between font-semibold mt-3 text-xl text-black' >
                 <h1>Provider Name: {providerName}</h1>
-                <p>Price:{rentPrice}$</p>
+                <p>{rentPrice}$</p>
             </div>
 
 
             <div className='flex gap-2 items-center '>
                 <span className='text-green-500'><IoLocationSharp size={24} /></span>
-            <h1 className='font-semibold mt-2 text'> {location}</h1>
+            <h1 className='font-semibold text-black mt-2 text'> {location}</h1>
           </div>
 
 

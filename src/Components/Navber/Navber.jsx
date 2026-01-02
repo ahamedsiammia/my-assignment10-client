@@ -1,11 +1,27 @@
-import React, { use } from "react";
-import { BiMenuAltLeft } from "react-icons/bi";
+import React, { use, useEffect, useState } from "react";
+import { BiSolidBookmark } from "react-icons/bi";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../Context/AuthProvider";
 import { toast } from "react-toastify";
+import { TbHomeFilled } from "react-icons/tb";
+import { RiAddBoxFill } from "react-icons/ri";
+import { FaCar, FaListAlt } from "react-icons/fa";
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const Navber = () => {
   const { user, Logout } = use(AuthContext);
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
+
+    useEffect(() => {
+        const html = document.querySelector('html')
+        html.setAttribute("data-theme", theme)
+        localStorage.setItem("theme", theme)
+    }, [theme])
+
+
+    const handleTheme = (checked) => {
+        setTheme(checked ? "dark" : "light")
+    }
 
   const hendleLogout = () => {
     Logout()
@@ -18,8 +34,9 @@ const Navber = () => {
   };
 
   return (
-    <nav className="navbar bg-linear-to-r from-[#C800FF] to-[#FF9800] p-4 text-white shadow-lg ">
-      <div className="navbar-start">
+    <div className=" shadow-sm ">
+      <nav className="navbar   container mx-auto">
+      <div className="navbar-start ">
 {/* mobile menu */}
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -114,14 +131,10 @@ const Navber = () => {
           </ul>
         </div>
 
-        <Link className="btn btn-ghost text-xl">
-          <img
-            className="w-[50px] h-[50px] rounded-2xl"
-            src="https://i.pinimg.com/736x/b9/6d/68/b96d689ea24ffa4a58e7d5f5a1845548.jpg"
-            alt=""
-          />
-          CarSpot
-        </Link>
+        <div className=" text-xl">
+         <span className="text-3xl font-extrabold text-[#FF6B00]">Car</span>
+        Spot
+        </div>
       </div>
 {/* computer menu */}
       <div className="navbar-center hidden lg:flex ">
@@ -130,11 +143,13 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-lg text-white"
                   : ""
               }
               to="/"
             >
+              <TbHomeFilled />
+
               Home
             </NavLink>
           </li>
@@ -144,11 +159,13 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-lg text-white"
                   : ""
               }
               to="/AddCar"
             >
+              <RiAddBoxFill />
+
               Add Car
             </NavLink>
           </li>
@@ -157,13 +174,17 @@ const Navber = () => {
             {
             user && <li>
             <NavLink
+            
               className={({ isActive }) =>
                 isActive
-                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-lg text-white"
                   : ""
               }
+              
               to="/MyListings"
             >
+              
+              <FaListAlt />
               My Listings
             </NavLink>
           </li>
@@ -174,11 +195,13 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-lg text-white"
                   : ""
               }
               to="/MyBookings"
             >
+              <BiSolidBookmark />
+
               My Booking
             </NavLink>
           </li>
@@ -187,11 +210,12 @@ const Navber = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-2xl text-white"
+                  ? "bg-linear-to-r from-[#FF6B00] to-[#FF2D55] rounded-lg text-white"
                   : ""
               }
               to="/BrowsCar"
             >
+              <FaCar />
               Brows Car
             </NavLink>
           </li>
@@ -216,6 +240,21 @@ const Navber = () => {
               tabIndex={0}
               className="dropdown-content z-[20] menu p-3 shadow bg-base-100 rounded-box w-52 text-black"
             >
+
+               <div className="flex items-center gap-2">
+                                        <span >
+                                            <MdOutlineLightMode size={24} />
+                                        </span>
+                                        <input
+                                            onChange={(e) => handleTheme(e.target.checked)}
+                                            type="checkbox"
+                                            defaultChecked={localStorage.getItem('theme') === "dark"}
+                                            className="toggle"
+                                        />
+                                        <span>
+                                            <MdDarkMode size={24} />
+                                        </span>
+                                    </div>
               <li className="font-semibold">{user?.displayName}</li>
               <li className="text-sm">{user?.email}</li>
               <hr className="my-2" />
@@ -246,6 +285,7 @@ const Navber = () => {
         )}
       </div>
     </nav>
+    </div>
   );
 };
 
