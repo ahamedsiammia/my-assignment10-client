@@ -257,6 +257,7 @@ const Navber = () => {
                                     </div>
               <li className="font-semibold">{user?.displayName}</li>
               <li className="text-sm">{user?.email}</li>
+              <NavLink to="/dashboard" className="bg-linear-to-r from-[#FF6B00] to-[#FF2D55] text-white px-3 py-2 rounded-xl">Dashboard</NavLink>
               <hr className="my-2" />
               <li>
                 <button

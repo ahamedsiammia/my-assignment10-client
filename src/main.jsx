@@ -17,6 +17,8 @@ import PrivetRout from './Context/PrivetRout.jsx';
 import AddCar from './Page/AddCar.jsx';
 import MyListings from './Page/MyListings.jsx';
 import Error from './Page/Error.jsx';
+import DashboardLayout from './Root/DashboardLayout.jsx';
+import MainDashboard from './Dashboard/MainDashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -66,6 +68,16 @@ const router = createBrowserRouter([
         element:<PrivetRout>
           <MyListings></MyListings>
         </PrivetRout>
+      }
+    ]
+  },
+  {
+    path:"/dashboard",
+    Component:DashboardLayout,
+    children:[
+      {
+        index:true,
+        Component: MainDashboard
       }
     ]
   }
