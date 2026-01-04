@@ -132,8 +132,8 @@ const Navber = () => {
         </div>
 
         <div className=" text-xl">
-         <span className="text-3xl font-extrabold text-[#FF6B00]">Car</span>
-        Spot
+         <span className="text-3xl font-extrabold text-[#FF6B00]">RW</span>
+        RentWheels
         </div>
       </div>
 {/* computer menu */}

@@ -7,172 +7,168 @@ import { FaUserNurse } from 'react-icons/fa';
 import { BiDonateBlood } from 'react-icons/bi';
 import { GiAnatomy } from 'react-icons/gi';
 import { CgProfile } from 'react-icons/cg';
+import { MdOutlinePublishedWithChanges } from 'react-icons/md';
+import { FiLogOut } from 'react-icons/fi';
 
 const Aside = () => {
-      const {LogOut,role}=use(AuthContext);
-    const navigate =useNavigate()
+      const {LogOut}=use(AuthContext);
     const [open, setOpen] = useState(false);
-    const [active,setActive]=useState("dashboard")
     return (
-         <div className="flex min-h-screen">
-    {/* MOBILE MENU BUTTON */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="lg:hidden p-4 text-2xl fixed top-2 left-2 z-50 bg-lime-500 text-white rounded-lg shadow-md"
-      >
-        {open ? <AiOutlineClose /> : <AiOutlineMenu />}
-      </button>
 
-      {/* ASIDE AREA */}
-      <aside className={`
-          fixed lg:static top-0 z-30 left-0 h-full w-64 bg-lime-500 text-white p-6 flex flex-col justify-between 
-          transform transition-transform duration-300 
-          ${open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-        `}>
-        <div>
-          <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
+     <div className="flex min-h-screen">
 
-          <nav className="space-y-3">
-            {/* Home */}
-            <NavLink
-              to="/"
-               onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                `flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700 ${
-                  isActive ? "bg-indigo-600" : ""
-                }`
-              }
+            <button
+                onClick={() => setOpen(!open)}
+                className="lg:hidden p-4 text-2xl fixed top-4 left-4 z-50 bg-gradient-to-r from-[#8A00FF] to-[#FF6A00] text-white rounded-full shadow-lg hover:bg-red-700 transition"
             >
-              <AiFillHome size={20} />
-              <span>Home</span>
-            </NavLink>
+                {open ? <AiOutlineClose /> : <AiOutlineMenu />}
+            </button>
 
-            {/* Main Dashboard */}
-            <NavLink
-              to="/dashboard"
-               onClick={() => {setOpen(false);setActive("dashboard")}}
-              className={ 
-                `flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700 ${
-                  active === "dashboard" ? "bg-blue-600" : ""
-                }`
-              }
+            {/* ASIDE AREA */}
+            <aside
+                className={`fixed lg:static top-0 z-30 left-0 h-full w-64 bg-gradient-to-r from-[#8A00FF] to-[#FF6A00] text-white p-6 flex flex-col justify-between transform transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+                    }`}
             >
-              <AiFillDashboard size={20} />
-              <span>Main Dashboard</span>
-            </NavLink>
+                <div>
+                    {/* LOGO / TITLE */}
+                    <h2 className="text-3xl font-bold mb-8 text-white drop-shadow-md">
+                         Dashboard
+                    </h2>
 
-            {/* Add request */}
-           {
-            role == "donor" &&  <NavLink
-              to="/dashboard/Add-request"
-              onClick={() => {setOpen(false);setActive("Add-request")}}
-              className={ 
-                `flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700 ${
-                  active === "Add-request" ? "bg-blue-600" : ""
-                }`
-              }
-            >
-              <VscGitPullRequestGoToChanges size={24} />
-              <span>Add Request</span>
-            </NavLink>
+                    {/* NAVIGATION */}
+                    <nav className="flex-1 flex flex-col gap-3">
 
-           }
-            {/* Users */}
-            {
-              role == "admin" && <NavLink
-              to="/dashboard/All-user"
-               onClick={() => {setOpen(false);setActive("All-user")}}
-              className={ 
-                `flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700 ${
-                  active === "All-user" ? "bg-blue-600" : ""
-                }`
-              }
-            >
-              <FaUserNurse size={20} />
-              <span>All Users</span>
-            </NavLink>
-            }
+                        <NavLink
+                            to="/"
+                            onClick={() => setOpen(false)}
+                            className={({ isActive }) =>
+                                `flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700 ${isActive ? "bg-indigo-600" : ""
+                                }`
+                            }
+                        >
+                            <AiFillHome size={20} />
+                            <span>Home</span>
+                        </NavLink>
 
-            {/* My Request */}
-            {
-              role == "donor" && 
-              <NavLink
-              to="/dashboard/My-request"
-               onClick={() => {setOpen(false);setActive("My-request")}}
-              className={ 
-                `flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700 ${
-                  active === "My-request" ? "bg-blue-600" : ""
-                }`
-              }
-            >
-              <BiDonateBlood size={20} />
-              <span>My Request</span>
-            </NavLink>
-            }
+                        <NavLink
+                            to="/dashboard"
+                            end
+                            className={({ isActive }) =>
+                                `flex items-center gap-3 p-3 rounded-lg transition ${isActive
+                                    ? "bg-white text-red-600 font-semibold shadow-md"
+                                    : "hover:bg-red-500 hover:bg-opacity-80"
+                                }`
+                            }
+                        >
+                            <AiFillDashboard className="h-5 w-5" /> Dashboard
+                        </NavLink>
 
-            {/* all request */}
-            {
-              role == "admin" && <NavLink
-              to="/dashboard/All-request"
-               onClick={() => {setOpen(false);setActive("All-request")}}
-              className={ 
-                `flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700 ${
-                  active === "All-request" ? "bg-blue-600" : ""
-                }`
-              }
-            >
-              <GiAnatomy size={20} />
-              <span>All Request</span>
-            </NavLink>
-            }
+                        <NavLink
+                            to="/dashboard/my-listings"
+                            className={({ isActive }) =>
+                                `flex items-center gap-3 p-3 rounded-lg transition ${isActive
+                                    ? "bg-white text-red-600 font-semibold shadow-md"
+                                    : "hover:bg-red-500 hover:bg-opacity-80"
+                                }`
+                            }
+                        >
+                            <MdOutlinePublishedWithChanges className="h-5 w-5" /> My Listings
+                        </NavLink>
 
-            {
-              role == "volunteer" && <NavLink
-              to="/dashboard/All-request"
-                onClick={() => {setOpen(false);setActive("All-request")}}
-              className={ 
-                `flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700 ${
-                  active === "All-request" ? "bg-blue-600" : ""
-                }`
-              }
-            >
-              <GiAnatomy size={20} />
-              <span>All Request</span>
-            </NavLink>
-            }
+                        <NavLink
+                            to="/dashboard/my-orders"
+                            className={({ isActive }) =>
+                                `flex items-center gap-3 p-3 rounded-lg transition ${isActive
+                                    ? "bg-white text-red-600 font-semibold shadow-md"
+                                    : "hover:bg-red-500 hover:bg-opacity-80"
+                                }`
+                            }
+                        >
+                            <MdOutlinePublishedWithChanges className="h-5 w-5" /> My Orders
+                        </NavLink>
+
+                        <NavLink
+                            to="/dashboard/myprofile"
+                            className={({ isActive }) =>
+                                `flex items-center gap-3 p-3 rounded-lg transition ${isActive
+                                    ? "bg-white text-red-600 font-semibold shadow-md"
+                                    : "hover:bg-red-500 hover:bg-opacity-80"
+                                }`
+                            }
+                        >
+                            <MdOutlinePublishedWithChanges className="h-5 w-5" /> My Profile
+                        </NavLink>
 
 
-              {/* profile */}
-            <NavLink
-              to="/dashboard/profile"
-               onClick={() => {setOpen(false);setActive("profile")}}
-              className={ 
-                `flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700 ${
-                  active === "profile" ? "bg-blue-600" : ""
-                }`
-              }
-            >
-              <CgProfile  size={20} />
-              <span>Profile</span>
-            </NavLink>
+                        {/* {role === "admin" && (
+                            <NavLink
+                                to="/dashboard/all-users"
+                                className={({ isActive }) =>
+                                    `flex items-center gap-3 p-3 rounded-lg transition ${isActive
+                                        ? "bg-white text-red-600 font-semibold shadow-md"
+                                        : "hover:bg-red-500 hover:bg-opacity-80"
+                                    }`
+                                }
+                            >
+                                <FiUsers className="h-5 w-5" /> All Users
+                            </NavLink>
+                        )} */}
 
+                        {/* {role === 'donor' && (
+                            <NavLink
+                                to="/dashboard/my-donation-requests"
+                                className={({ isActive }) =>
+                                    `flex items-center gap-3 p-3 rounded-lg transition ${isActive
+                                        ? "bg-white text-red-600 font-semibold shadow-md"
+                                        : "hover:bg-red-500 hover:bg-opacity-80"
+                                    }`
+                                }
+                            >
+                                <BiDonateBlood className="h-5 w-5" /> My Request
+                            </NavLink>
+                        )} */}
 
+                        {/* {role === "admin" && (
+                            <NavLink
+                                to="/dashboard/all-requests"
+                                className={({ isActive }) =>
+                                    `flex items-center gap-3 p-3 rounded-lg transition ${isActive
+                                        ? "bg-white text-red-600 font-semibold shadow-md"
+                                        : "hover:bg-red-500 hover:bg-opacity-80"
+                                    }`
+                                }
+                            >
+                                <BiDonateBlood className="h-5 w-5" /> All Requests
+                            </NavLink>
+                        )} */}
 
-          </nav>
+                        {/* {role === "volunteer" && (
+                            <NavLink
+                                to="/dashboard/all-requests"
+                                className={({ isActive }) =>
+                                    `flex items-center gap-3 p-3 rounded-lg transition ${isActive
+                                        ? "bg-white text-red-600 font-semibold shadow-md"
+                                        : "hover:bg-red-500 hover:bg-opacity-80"
+                                    }`
+                                }
+                            >
+                                <BiDonateBlood className="h-5 w-5" /> All Requests
+                            </NavLink>
+                        )} */}
+                    </nav>
+                </div>
+
+                {/* LOGOUT BUTTON */}
+                <div className="p-4 border-t border-red-400">
+                    <button
+                        
+                        className="w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium text-red-600 bg-white hover:bg-red-50 transition shadow-sm"
+                    >
+                        <FiLogOut className="h-5 w-5" /> Logout
+                    </button>
+                </div>
+            </aside>
         </div>
-
-         
-
-        {/* LOGOUT BUTTON */}
-        <button  className="flex items-center gap-3 p-3 rounded-lg hover:bg-red-600 transition">
-          <AiOutlineLogout size={20} />
-          Logout
-        </button>
-      </aside>
-
-
-
-    </div>
     );
 };
 

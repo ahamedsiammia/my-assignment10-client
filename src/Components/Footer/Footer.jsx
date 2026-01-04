@@ -6,7 +6,7 @@ const Footer = () => {
         <div className='  '>
             <div className='container mx-auto  grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 p-10 '>
             <div className='space-y-5 text-gray-500'>
-                <h1 className='text-2xl font-bold '> <span className="text-3xl font-extrabold text-blue-500">CS</span> CarSpot</h1>
+                <h1 className='text-2xl font-bold '> <span className="text-3xl font-extrabold text-blue-500">RW</span> RentWheels</h1>
                 <p>You trusted patform for local car <br /> rentals,connecting  you with providers <br /> across the city.</p>
                 <div className='flex items-center gap-2'>
                     <span><FaEnvelope></FaEnvelope></span>
