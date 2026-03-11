@@ -19,6 +19,7 @@ import MyListings from './Page/MyListings.jsx';
 import Error from './Page/Error.jsx';
 import DashboardLayout from './Root/DashboardLayout.jsx';
 import MainDashboard from './Dashboard/MainDashboard.jsx';
+import Profile from './Dashboard/Profile/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         index:true,
         Component: MainDashboard
+      },
+      {
+        path:"/dashboard/profile",
+        Component: Profile
       }
     ]
   }

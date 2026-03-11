@@ -226,22 +226,7 @@ const Navber = () => {
 
       
       <div className="navbar-end md:gap-5">
-        {user ? (
-          <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button">
-              <img
-                className="w-[45px] h-[45px] rounded-full cursor-pointer border-2 border-white"
-                src={user?.photoURL}
-                alt="profile"
-              />
-            </div>
-
-            <ul
-              tabIndex={0}
-              className="dropdown-content z-[20] menu p-3 shadow bg-base-100 rounded-box w-52 text-black"
-            >
-
-               <div className="flex items-center gap-2">
+                                   <div className="flex items-center gap-2">
                                         <span >
                                             <MdOutlineLightMode size={24} />
                                         </span>
@@ -255,6 +240,22 @@ const Navber = () => {
                                             <MdDarkMode size={24} />
                                         </span>
                                     </div>
+        {user ? (
+          <div className="dropdown dropdown-end ">
+
+            <div tabIndex={0} role="button">
+              <img
+                className="w-[45px] h-[45px] rounded-full cursor-pointer border-2 border-white"
+                src={user?.photoURL}
+                alt="profile"
+              />
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[20] menu p-3 shadow bg-base-100 rounded-box w-52 text-black"
+            >
+
+
               <li className="font-semibold">{user?.displayName}</li>
               <li className="text-sm">{user?.email}</li>
               <NavLink to="/dashboard" className="bg-linear-to-r from-[#FF6B00] to-[#FF2D55] text-white px-3 py-2 rounded-xl">Dashboard</NavLink>

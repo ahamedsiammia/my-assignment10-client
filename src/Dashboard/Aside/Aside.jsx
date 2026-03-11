@@ -2,17 +2,26 @@ import React, { use, useState } from 'react';
 import { AiFillDashboard, AiFillHome, AiOutlineClose, AiOutlineLogout, AiOutlineMenu } from 'react-icons/ai';
 import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../Context/AuthProvider';
-import { VscGitPullRequestGoToChanges } from 'react-icons/vsc';
-import { FaUserNurse } from 'react-icons/fa';
-import { BiDonateBlood } from 'react-icons/bi';
-import { GiAnatomy } from 'react-icons/gi';
-import { CgProfile } from 'react-icons/cg';
 import { MdOutlinePublishedWithChanges } from 'react-icons/md';
 import { FiLogOut } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 
 const Aside = () => {
-      const {LogOut}=use(AuthContext);
+      const {Logout}=use(AuthContext);
+      const navigate = useNavigate()
     const [open, setOpen] = useState(false);
+    const handleLogout =()=>{
+        Logout().then(res => {
+            toast.success("your logOut successfull")
+            setTimeout(()=>{
+                
+                navigate("/")
+            },3000)
+        })
+        .then(error =>{
+            toast.error("your logOut not successfull")
+        })
+    }
     return (
 
      <div className="flex min-h-screen">
@@ -64,7 +73,7 @@ const Aside = () => {
                         </NavLink>
 
                         <NavLink
-                            to="/dashboard/my-listings"
+                            to="/MyListings"
                             className={({ isActive }) =>
                                 `flex items-center gap-3 p-3 rounded-lg transition ${isActive
                                     ? "bg-white text-red-600 font-semibold shadow-md"
@@ -76,7 +85,7 @@ const Aside = () => {
                         </NavLink>
 
                         <NavLink
-                            to="/dashboard/my-orders"
+                            to="/MyBookings"
                             className={({ isActive }) =>
                                 `flex items-center gap-3 p-3 rounded-lg transition ${isActive
                                     ? "bg-white text-red-600 font-semibold shadow-md"
@@ -84,11 +93,11 @@ const Aside = () => {
                                 }`
                             }
                         >
-                            <MdOutlinePublishedWithChanges className="h-5 w-5" /> My Orders
+                            <MdOutlinePublishedWithChanges className="h-5 w-5" /> My Booking
                         </NavLink>
 
                         <NavLink
-                            to="/dashboard/myprofile"
+                            to="/dashboard/profile"
                             className={({ isActive }) =>
                                 `flex items-center gap-3 p-3 rounded-lg transition ${isActive
                                     ? "bg-white text-red-600 font-semibold shadow-md"
@@ -161,7 +170,7 @@ const Aside = () => {
                 {/* LOGOUT BUTTON */}
                 <div className="p-4 border-t border-red-400">
                     <button
-                        
+                        onClick={handleLogout}
                         className="w-full flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium text-red-600 bg-white hover:bg-red-50 transition shadow-sm"
                     >
                         <FiLogOut className="h-5 w-5" /> Logout
